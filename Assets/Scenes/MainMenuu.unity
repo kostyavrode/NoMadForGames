@@ -1951,6 +1951,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5761114982725626197, guid: fb7330a77f411954690fc2110915b74c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: 1-1
+      objectReference: {fileID: 0}
     - target: {fileID: 6684508990694735917, guid: fb7330a77f411954690fc2110915b74c, type: 3}
       propertyPath: m_Name
       value: SelectGame (3)
