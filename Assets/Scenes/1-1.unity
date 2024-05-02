@@ -12228,10 +12228,74 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mario
       objectReference: {fileID: 0}
+    - target: {fileID: 546527053016215309, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 546527053016215309, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 546527053016215309, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 1109544644287050182, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1222442145135012062, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
       propertyPath: animationSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3908975041035222098, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[0]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 3908975041035222098, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[1]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 3908975041035222098, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: sprites.Array.data[2]
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 4805063566520083554, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: deadSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 5824298929761322370, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5824298929761322370, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 7989592652664066959, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 7989592652664066959, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 7989592652664066959, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: slide
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 8301214115263448928, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: idle
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 8301214115263448928, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: jump
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
+    - target: {fileID: 8301214115263448928, guid: d83a5e7863a8afc4faee91819fff1fa7, type: 3}
+      propertyPath: slide
+      value: 
+      objectReference: {fileID: 21300000, guid: 56c96eaab8abad241b7dc88211c5e625, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

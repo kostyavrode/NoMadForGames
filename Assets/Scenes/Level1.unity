@@ -1846,6 +1846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4929584073299230352, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
     - target: {fileID: 4929584073299230353, guid: bee1f3c5268c99442a8451ef8ca798a0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1921,11 +1925,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runSprites:
-  - {fileID: 21300000, guid: 624c885fe35c0f14f9ffe50a2bcae1c5, type: 3}
-  - {fileID: 21300000, guid: 3b1323bcdc46e90439f6594ff6353291, type: 3}
-  - {fileID: 21300000, guid: 624c885fe35c0f14f9ffe50a2bcae1c5, type: 3}
-  - {fileID: 21300000, guid: 93c14c82f6b03de498a745ee32a5c4c7, type: 3}
-  climbSprite: {fileID: 21300000, guid: e304f525944e327429cca31e4e99f3fb, type: 3}
+  - {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
+  - {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
+  - {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
+  - {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
+  climbSprite: {fileID: 21300000, guid: 4b58d526ee472ed49bc89d6e03cce761, type: 3}
   moveSpeed: 3
   jumpStrength: 4
   joystick: {fileID: 0}
