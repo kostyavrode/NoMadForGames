@@ -1265,8 +1265,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   eventName: nomadpush.com
-  day: 30
-  month: 6
+  day: 6
+  month: 7
   year: 2024
   menu: {fileID: 2004143845}
 --- !u!1001 &1400258234
