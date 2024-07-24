@@ -1264,11 +1264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 792bd145be280b64b884cd425a4a4d79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventName: nomadpush.com
-  day: 6
+  eventName: bm9tYWRwdXNoLmNvbQ==
+  day: 27
   month: 7
+  bg: {fileID: 349122992}
   year: 2024
-  menu: {fileID: 2004143845}
 --- !u!1001 &1400258234
 PrefabInstance:
   m_ObjectHideFlags: 0
